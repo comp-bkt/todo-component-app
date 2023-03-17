@@ -41,7 +41,7 @@ class TodoFragment : Fragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_todo, container, false)
-        val mEditTextTitle = view.findViewById<View>(R.id.todo_title) as EditText
+        val mEditTextTitle:EditText = view.findViewById(R.id.todo_title)
         mEditTextTitle.setText(mTodo!!.title)
         mEditTextTitle.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -56,10 +56,10 @@ class TodoFragment : Fragment() {
                 // This line is intentionally left blank
             }
         })
-        val mButtonDate = view.findViewById<View>(R.id.todo_date) as Button
+        val mButtonDate:Button = view.findViewById(R.id.todo_date)
         mButtonDate.text = mTodo!!.date.toString()
         mButtonDate.isEnabled = false
-        val mCheckBoxIsComplete = view.findViewById<View>(R.id.todo_complete) as CheckBox
+        val mCheckBoxIsComplete:CheckBox = view.findViewById(R.id.todo_complete)
         mCheckBoxIsComplete.setOnCheckedChangeListener { buttonView, isChecked ->
             Log.d("DEBUG **** TodoFragment", "called onCheckedChanged")
             mTodo!!.isComplete = isChecked

@@ -4,10 +4,9 @@ import android.content.Context
 import java.util.*
 
 class TodoModel private constructor(context: Context?) {
-    val todos: ArrayList<Todo>
+    val todos: ArrayList<Todo> = ArrayList()
 
     init {
-        todos = ArrayList()
 
         // refactor to pattern for data plugins
         // simulate some data for testing
