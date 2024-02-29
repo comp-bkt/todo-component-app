@@ -18,7 +18,7 @@ class TodoPagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todo_pager)
-        val todoId = intent.getSerializableExtra(EXTRA_TODO_ID) as UUID?
+        val todoId = intent.getSerializableExtra(EXTRA_TODO_ID, UUID::class.java)
         val mViewPager:ViewPager2 = findViewById(R.id.todo_view_pager)
         mTodos = TodoModel.Companion.get(this)?.todos
         mViewPager.adapter = object : FragmentStateAdapter(this) {

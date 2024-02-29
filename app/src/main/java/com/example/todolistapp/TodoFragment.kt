@@ -33,8 +33,8 @@ class TodoFragment : Fragment() {
          and pass in the UUID it retrieves from its extra argument.
 
         */
-        val todoId = requireArguments().getSerializable(ARG_TODO_ID) as UUID?
-        mTodo = TodoModel.Companion.get(activity)!!.getTodo(todoId)
+        val todoId = requireArguments().getSerializable(ARG_TODO_ID, UUID::class.java)
+        mTodo = TodoModel.Companion[activity]!!.getTodo(todoId)
     }
 
     override fun onCreateView(inflater: LayoutInflater,
