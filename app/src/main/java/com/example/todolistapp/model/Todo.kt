@@ -1,4 +1,4 @@
-package com.example.todolistapp
+package com.example.todolistapp.model
 
 import java.util.*
 
@@ -7,7 +7,7 @@ data class Todo (
     var title: String? = null,
     var detail: String? = null,
     var date: Date = Date(),
-    var isComplete:Boolean = false) {
+    var isComplete:Boolean = false) : java.io.Serializable {
 
     init {
         id = UUID.randomUUID()

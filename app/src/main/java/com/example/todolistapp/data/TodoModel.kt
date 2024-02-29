@@ -1,9 +1,10 @@
-package com.example.todolistapp
+package com.example.todolistapp.data
 
 import android.content.Context
+import com.example.todolistapp.model.Todo
 import java.util.*
 
-class TodoModel private constructor(context: Context?) {
+class TodoModel private constructor() {
     val todos: ArrayList<Todo> = ArrayList()
 
     init {
@@ -34,9 +35,9 @@ class TodoModel private constructor(context: Context?) {
 
     companion object {
         private var sTodoModel: TodoModel? = null
-        operator fun get(context: Context?): TodoModel? {
+        fun get(): TodoModel? {
             if (sTodoModel == null) {
-                sTodoModel = TodoModel(context)
+                sTodoModel = TodoModel()
             }
             return sTodoModel
         }
